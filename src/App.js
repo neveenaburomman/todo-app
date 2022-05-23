@@ -4,13 +4,16 @@ import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/icons/lib/css/blueprint-icons.css";
 import ToDo from './components /ToDo/todo';
 import Header from './components /Header/header';
+import SettingsContext from './context/context'
 
 function App(){
   
     return (
       <>
+      <SettingsContext>
        <Header/>
        <ToDo />
+       </SettingsContext>
       </>
     );
   }

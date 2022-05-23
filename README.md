@@ -1,6 +1,9 @@
 ## To-Do app
 To Do List Manager
+
 ## UML 
+![uml](https://user-images.githubusercontent.com/90922969/169901134-0314bb95-fb0d-46fc-be56-272eff9e2000.jpg)
+
 ## phase-1 :Context API
 n this phase, we’ll be adding some top-level settings for the application, so that the user can make some display choices that the app will use by default.
 - Implement the Context API to make some basic application settings available to components

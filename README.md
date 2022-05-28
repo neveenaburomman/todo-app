@@ -12,7 +12,7 @@ n this phase, we’ll be adding some top-level settings for the application, so 
 
 ### useForm()      
 seForm is custom hook for managing forms with ease.
-## phase-2 
+## phase-2:Context API - Behaviors
 we’re going to extend the functionality of our application by allowing the user to make some decisions on how they would like the application to function
 by Providing the users with a form where they can change the values for those settings
 

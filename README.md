@@ -11,8 +11,11 @@ n this phase, we’ll be adding some top-level settings for the application, so 
       - Whether or not to show completed items
 
 ### useForm()      
-seForm is custom hook for managing forms with ease. I
+seForm is custom hook for managing forms with ease.
 ## phase-2 
+we’re going to extend the functionality of our application by allowing the user to make some decisions on how they would like the application to function
+by Providing the users with a form where they can change the values for those settings
+
 ## Phase 3: Adding security and access controls to the application.
  we’ll be requiring that users be logged in, in order to see the to do items. Additionally, based on their user type, they will be allowed (or denied) to perform actions such as editing or deleting them.
 ## Phase 4:

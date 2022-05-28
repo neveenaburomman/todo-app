@@ -10,9 +10,12 @@ n this phase, we’ll be adding some top-level settings for the application, so 
       - How many To Do Items to show at once
       - Whether or not to show completed items
 
+### how global state is consumed by the components
+React’s Context API simplifies the process of making data available to a large number of components, without having to manually pass that data through props at each level of your app’s component tree.Each Context object comes with a Provider component which allows consuming components to subscribe to Context changes
+
 ### useForm()      
 seForm is custom hook for managing forms with ease to validate your form with minimal re-renders.basically to handle our functions and it takes a callback as
-a parameter
+a argument.
 ## phase-2:Context API - Behaviors
 we’re going to extend the functionality of our application by allowing the user to make some decisions on how they would like the application to function
 by Providing the users with a form where they can change the values for those settings.

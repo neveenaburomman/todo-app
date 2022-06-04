@@ -6,6 +6,9 @@ import { v4 as uuid } from 'uuid';
 import { SettingsContext } from '../../context/context';
 import CompletedList from '../List/CompletedList'
 import ReactPaginate from 'react-paginate';
+import { loginContext } from '../../context/Auth.js';
+import { When } from 'react-if';
+
 import Form from '../Form/form.js';
 const ToDo = () => {
 
@@ -21,6 +24,7 @@ const ToDo = () => {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   ////
+  const auth = useContext(loginContext)
 
   useEffect(() => {
     const endOffset = itemOffset + setting.number;
@@ -104,12 +108,17 @@ useEffect(() => {
 console.log(currentItems)
   return (
     <>
+  <When condition={!auth.isLoggedIn}>
+=        <h1 style={{ backgroundColor: "grey", width: "600px", color: "white" }}>WELCOME TO THE To-Do List APP! </h1>
+=      </When>
+    <When condition={auth.isLoggedIn}>
       <header>
         <h1 style={{ backgroundColor: "grey", width: "400px", color: "white" }}>To Do List: {incomplete} items pending </h1>
       </header>
-
-
+      </When>
       <Form handleChange={handleChange} handleSubmit={handleSubmit} showTask={showTask} handleSort={handleSort}/>
+
+      <When condition={auth.isLoggedIn}> 
 
       <Card interactive={true} itemvation={Elevation.TWO} style={{ height: "200px", display: "flex", flexWrap: "wrap", backgroundColor: 'blue' }}>
 
@@ -128,13 +137,15 @@ console.log(currentItems)
         ))}
 
       </Card>
+     
+      
       <div style={{ height: "200px", display: "flex", flexWrap: "wrap" }}>
         <ReactPaginate breakLabel="..." nextLabel="next >" onPageChange={handlePageClick} pageRangeDisplayed={6} pageCount={pageCount} previousLabel="< previous" renderOnZeroPageCount={null} />
         <br></br>
       </div>
       <Button type="submit" onClick={showTask}> Show completed Tasks </Button>
       <CompletedList list={list} deleteItem={deleteItem} />
-
+      </When>
     </>
   );
 

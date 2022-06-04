@@ -1,20 +1,20 @@
 import React from 'react';
-import "normalize.css";
-import "@blueprintjs/core/lib/css/blueprint.css";
-import "@blueprintjs/icons/lib/css/blueprint-icons.css";
+import './App.css'
 import ToDo from './components /ToDo/todo';
 import Header from './components /Header/header';
 import Settings from './context/context';
+import Auth from './context/Auth';
 
 function App(){
   
     return (
       <>
+      <Auth>
       <Settings>
       <Header/>
        <ToDo />
       </Settings>
-       
+      </Auth>
       </>
     );
   }
